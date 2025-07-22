@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0, 0.392157, 0, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "idle",
+"description": "",
+"display_name": "Juca",
+"mirror": false,
+"nicknames": ["Juca"],
+"offset": Vector2(0, 0),
+"portraits": {
+"idle": {
+"export_overrides": {
+"image": "\"res://Assets/JucaSprites/JucaDialogo.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

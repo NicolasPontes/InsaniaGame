@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3uf5u0oyyiw5"]
+
+[ext_resource type="Theme" uid="uid://cr4y383p1wdpm" path="res://Assets/Themes/pause_menu.tres" id="1_4c5hb"]
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_kgqd7"]
+[ext_resource type="Texture2D" uid="uid://di1dnkf2usylt" path="res://Assets/Cenarios/PauseBg.png" id="2_6yhla"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_escqc"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_a7sme"]
+events = [SubResource("InputEventAction_escqc")]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_kgqd7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_6yhla")
+expand_mode = 3
+
+[node name="bg_overlay" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.254902)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="resume_btn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_4c5hb")
+shortcut = SubResource("Shortcut_a7sme")
+text = "CONTINUAR"
+
+[node name="quit_btn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_4c5hb")
+text = "SAIR DO JOGO"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]

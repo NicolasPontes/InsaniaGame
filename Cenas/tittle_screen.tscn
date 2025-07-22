@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7p62rr2ndwes"]
+
+[ext_resource type="Texture2D" uid="uid://dhb4cs1fbqoh3" path="res://Assets/Cenarios/TelaPreta.svg" id="1_01ox5"]
+[ext_resource type="Texture2D" uid="uid://cyv6q40cqyhau" path="res://Assets/Cenarios/titulo_insania.png" id="2_umjen"]
+
+[node name="TittleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 103.0
+offset_bottom = 105.0
+
+[node name="bg" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_01ox5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Novo Jogo"
+
+[node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Créditos
+"
+
+[node name="sair_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sair do Jogo
+"
+
+[node name="Juca" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_umjen")

@@ -1,0 +1,382 @@
+[gd_scene load_steps=36 format=3 uid="uid://c8owwyobnto6q"]
+
+[ext_resource type="Texture2D" uid="uid://d0hed11vtsek" path="res://Assets/Cenarios/casa_juca.jpeg" id="1_0ay48"]
+[ext_resource type="Script" path="res://Cenas/casa_juca.gd" id="1_cjwm0"]
+[ext_resource type="PackedScene" uid="uid://by52luhmxa3am" path="res://Cenas/player.tscn" id="2_86445"]
+[ext_resource type="Texture2D" uid="uid://bqu0dvoh2y3hb" path="res://Assets/Luzes/254 Sem Titulo_20241112195540.jpg" id="3_0lxu4"]
+[ext_resource type="Texture2D" uid="uid://2lbce72481v3" path="res://Assets/Cenarios/Relogio2.png" id="6_358xd"]
+[ext_resource type="Texture2D" uid="uid://cwuebl4lmtg6i" path="res://Assets/Cenarios/Relogio1.png" id="6_s512c"]
+[ext_resource type="Texture2D" uid="uid://c7cddonmtn8hg" path="res://Assets/Cenarios/Relogio3.png" id="7_oujmj"]
+[ext_resource type="Texture2D" uid="uid://ctgneiqlqkc6l" path="res://Assets/Cenarios/Relogio4.png" id="8_eqfi2"]
+[ext_resource type="Texture2D" uid="uid://bbi2xxyo2rhid" path="res://Assets/Cenarios/Relogio5.png" id="9_ef0rs"]
+[ext_resource type="Texture2D" uid="uid://dlslfo8vq37dr" path="res://Assets/Cenarios/Relogio6.png" id="10_bhrv2"]
+[ext_resource type="AudioStream" uid="uid://mgn6rj2keexs" path="res://Assets/Songs/casa juca.mp3" id="11_l20ox"]
+[ext_resource type="AudioStream" uid="uid://ddh8e8j42n2bc" path="res://Assets/Songs/boss .mp3" id="12_l786h"]
+[ext_resource type="PackedScene" uid="uid://bjcass8lqq7ei" path="res://Cenas/hud.tscn" id="13_32i8w"]
+[ext_resource type="PackedScene" uid="uid://d3uf5u0oyyiw5" path="res://Cenas/pause_menu.tscn" id="14_1teir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rc4fc"]
+size = Vector2(4822.5, 132.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjgma"]
+size = Vector2(592.425, 1191)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k2mj"]
+size = Vector2(0.249632, 421.679)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqunm"]
+size = Vector2(3769.53, 39.8438)
+
+[sub_resource type="Animation" id="Animation_vboqu"]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lvp1j"]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iekgm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vpm2k"]
+_data = {
+"FadeIn": SubResource("Animation_vboqu"),
+"FadeOut": SubResource("Animation_lvp1j"),
+"RESET": SubResource("Animation_iekgm")
+}
+
+[sub_resource type="Animation" id="Animation_tk4a4"]
+resource_name = "Piscando"
+length = 5.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.6, 3.1, 3.6, 4.1, 4.6, 5.36667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1gfin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Relogio:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_s512c")]
+}
+
+[sub_resource type="Animation" id="Animation_4avm5"]
+resource_name = "Rodando"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Relogio:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_s512c"), ExtResource("6_358xd"), ExtResource("7_oujmj"), ExtResource("8_eqfi2"), ExtResource("9_ef0rs"), ExtResource("10_bhrv2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6tgpu"]
+_data = {
+"Piscando": SubResource("Animation_tk4a4"),
+"RESET": SubResource("Animation_1gfin"),
+"Rodando": SubResource("Animation_4avm5")
+}
+
+[sub_resource type="Animation" id="Animation_uma06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Relogio:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_s512c")]
+}
+
+[sub_resource type="Animation" id="Animation_5pwv8"]
+resource_name = "Rodando"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Relogio:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_s512c"), ExtResource("6_358xd"), ExtResource("7_oujmj"), ExtResource("8_eqfi2"), ExtResource("9_ef0rs"), ExtResource("10_bhrv2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0rel"]
+_data = {
+"RESET": SubResource("Animation_uma06"),
+"Rodando": SubResource("Animation_5pwv8")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t80yh"]
+size = Vector2(1091, 610.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjj80"]
+size = Vector2(365, 629)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jh3r"]
+size = Vector2(572.25, 701)
+
+[sub_resource type="Animation" id="Animation_153no"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("luz/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+
+[sub_resource type="Animation" id="Animation_a5une"]
+resource_name = "luz"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("luz/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.03333, 2.03333, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.5, 0.4, 0.3, 0.2, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mh5tr"]
+_data = {
+"RESET": SubResource("Animation_153no"),
+"luz": SubResource("Animation_a5une")
+}
+
+[node name="casa" type="Node2D"]
+position = Vector2(623, 121)
+scale = Vector2(0.283458, 0.283458)
+script = ExtResource("1_cjwm0")
+metadata/_edit_horizontal_guides_ = [-3.0, -352.0, 1498.0]
+metadata/_edit_vertical_guides_ = [0.0, 4828.0]
+
+[node name="CasaDoJuca" type="Sprite2D" parent="."]
+position = Vector2(209, 227)
+scale = Vector2(0.994152, 0.98533)
+texture = ExtResource("1_0ay48")
+
+[node name="Relogio" type="Sprite2D" parent="."]
+position = Vector2(968, -78)
+scale = Vector2(0.415, 0.378)
+texture = ExtResource("6_s512c")
+
+[node name="Player" parent="." instance=ExtResource("2_86445")]
+position = Vector2(-1379, 423)
+scale = Vector2(1.28, 1.28)
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(-416.406, 126.563)
+limit_left = 0
+limit_top = 0
+limit_right = 1364
+limit_bottom = 369
+drag_horizontal_enabled = true
+drag_right_margin = 0.0
+
+[node name="luz" type="Sprite2D" parent="."]
+position = Vector2(-167, 179)
+scale = Vector2(1.59115, 1.56836)
+
+[node name="PointLight2D" type="PointLight2D" parent="luz"]
+position = Vector2(175.974, -522.202)
+scale = Vector2(4.10829, 5.17888)
+color = Color(0.83622, 0.705022, 0.261692, 1)
+energy = 0.5
+texture = ExtResource("3_0lxu4")
+texture_scale = 0.5
+
+[node name="Chao" type="StaticBody2D" parent="."]
+position = Vector2(432, 718)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+position = Vector2(-229.25, 101.25)
+shape = SubResource("RectangleShape2D_rc4fc")
+
+[node name="limite2" type="StaticBody2D" parent="."]
+position = Vector2(2185, 451)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limite2"]
+position = Vector2(146.787, -285.5)
+shape = SubResource("RectangleShape2D_tjgma")
+
+[node name="limite1" type="StaticBody2D" parent="."]
+scale = Vector2(31042.7, -120.726)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limite1"]
+position = Vector2(-0.0689937, -1.72291)
+scale = Vector2(0.0172273, 0.024849)
+shape = SubResource("RectangleShape2D_1k2mj")
+
+[node name="teto" type="StaticBody2D" parent="."]
+position = Vector2(-1723, 657)
+scale = Vector2(1.28, 1.28)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teto"]
+position = Vector2(1508.98, -824.609)
+shape = SubResource("RectangleShape2D_nqunm")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="transition" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+offset_top = 4.0
+offset_right = 6396.0
+offset_bottom = 934.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
+libraries = {
+"": SubResource("AnimationLibrary_vpm2k")
+}
+
+[node name="AnimacaoSala" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6tgpu")
+}
+
+[node name="AnimacaoRelogio" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l0rel")
+}
+
+[node name="Ambiente" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_l20ox")
+autoplay = true
+parameters/looping = true
+
+[node name="boss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_l786h")
+volume_db = -5.0
+parameters/looping = false
+
+[node name="Sofa" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sofa"]
+position = Vector2(-399.5, 359.75)
+shape = SubResource("RectangleShape2D_t80yh")
+
+[node name="Planta" type="Area2D" parent="."]
+position = Vector2(375, 258)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planta"]
+position = Vector2(-16.5, 77.5)
+shape = SubResource("RectangleShape2D_pjj80")
+
+[node name="Poltrona" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poltrona"]
+position = Vector2(2076.13, 392)
+shape = SubResource("RectangleShape2D_2jh3r")
+
+[node name="HUD" parent="." instance=ExtResource("13_32i8w")]
+
+[node name="luz2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mh5tr")
+}
+
+[node name="pause_menu" parent="." instance=ExtResource("14_1teir")]
+
+[connection signal="body_entered" from="Sofa" to="." method="_on_sofa_body_entered"]
+[connection signal="body_exited" from="Sofa" to="." method="_on_sofa_body_exited"]
+[connection signal="body_entered" from="Planta" to="." method="_on_planta_body_entered"]
+[connection signal="body_exited" from="Planta" to="." method="_on_planta_body_exited"]
+[connection signal="body_entered" from="Poltrona" to="." method="_on_poltrona_body_entered"]
+[connection signal="body_exited" from="Poltrona" to="." method="_on_poltrona_body_exited"]

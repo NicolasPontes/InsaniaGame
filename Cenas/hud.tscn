@@ -1,0 +1,151 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjcass8lqq7ei"]
+
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_6ab7j"]
+[ext_resource type="FontFile" uid="uid://vsju2iahj2ny" path="res://Assets/Fonts/Marquen.ttf" id="2_55ral"]
+[ext_resource type="Texture2D" uid="uid://djkg4ky2p0grj" path="res://Assets/Cenarios/Carta_Aberta_.png" id="3_ek6lj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vuo24"]
+bg_color = Color(0.304462, 0.304462, 0.304462, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ul8f"]
+bg_color = Color(0.465251, 0.0386591, 1.20327e-07, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_faibp"]
+font = ExtResource("2_55ral")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xu115"]
+bg_color = Color(0.305882, 0.305882, 0.305882, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kaim2"]
+bg_color = Color(0.0701524, 0.0701524, 0.0701524, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fmp7y"]
+font = ExtResource("2_55ral")
+
+[sub_resource type="LabelSettings" id="LabelSettings_m5erp"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_6ab7j")
+metadata/_edit_horizontal_guides_ = [15.0]
+metadata/_edit_vertical_guides_ = [625.0]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="Control/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_vuo24")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7ul8f")
+value = 100.0
+show_percentage = false
+
+[node name="SanidadeLabel" type="Label" parent="Control/MarginContainer/HBoxContainer/HealthBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -14.0
+offset_right = 61.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "SANIDADE"
+label_settings = SubResource("LabelSettings_faibp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UltimateBar" type="ProgressBar" parent="Control/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_xu115")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kaim2")
+show_percentage = false
+
+[node name="InsanidadeLabel" type="Label" parent="Control/MarginContainer/HBoxContainer/UltimateBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -14.0
+offset_right = 61.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9169, 1.031)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "INSANIDADE"
+label_settings = SubResource("LabelSettings_fmp7y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCarta" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(569, 45)
+rotation = 0.00907308
+scale = Vector2(0.0197288, 0.0197288)
+texture = ExtResource("3_ek6lj")
+
+[node name="QtdCarta" type="Label" parent="."]
+visible = false
+offset_left = 593.0
+offset_top = 32.0
+offset_right = 633.0
+offset_bottom = 55.0
+rotation = 0.00701964
+scale = Vector2(1.58467, 1.58467)
+theme_override_fonts/font = ExtResource("2_55ral")
+text = "x7"
+label_settings = SubResource("LabelSettings_m5erp")
+
+[node name="MissaoLabel" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 95.0
+offset_right = 61.0
+offset_bottom = 121.0
+scale = Vector2(0.695908, 0.695908)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_55ral")
+text = "MISSÃO:"
+
+[node name="Tasks" type="Label" parent="MissaoLabel"]
+layout_mode = 0
+offset_top = 18.6806
+offset_right = 41.0
+offset_bottom = 44.6806
+scale = Vector2(0.833889, 0.833889)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_55ral")
+text = "Ande pela escola e Encontre as Cartas
+"

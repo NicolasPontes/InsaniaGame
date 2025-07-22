@@ -1,0 +1,7 @@
+[style name="EstiloInsania"]
+join AgroBoy center
+AgroBoy: Oba peão, bão?
+leave AgroBoy
+join Juca center
+Juca: ... Oi
+leave Juca

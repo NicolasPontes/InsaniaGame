@@ -1,0 +1,10 @@
+[background arg="res://Assets/Cenarios/telaPretaogo.png" fade="0.0"]
+[style name="EstiloInicio"]
+[music path="res://Assets/Songs/introdução_juca.mp3" channel="1" fade="3.0" volume="-10.0"]
+Meu nome é... Luciano Ribeiro Andrade.
+Tambem conhecido como Juca, apelido que minha mãe me deu. Nasci em Brasilia, Sobradinho. 18 de março de  1996.
+join Juca center
+Tive uma infância comum, tirando pelo fato de que eu nunca tive amigos.  Me abrir, conversar, pra mim era algo impossivel.
+Poderia contar cada detalhe da minha vida pra vocês, cada lagrima, cada choro, cada desilusão.
+Porém irei focar em acontecimentos que me trouxeram até aqui... O fundo do poço
+leave Juca

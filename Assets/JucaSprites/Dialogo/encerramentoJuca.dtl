@@ -1,0 +1,13 @@
+[style name="EstiloInicio"]
+Juca: Eu rezei a deus, para que ele fizesse tudo aquilo passar, mas ele não me escutava.\
+Afinal, eu não era igual a todo mundo.
+join Juca center
+Juca: Naquele momento, eu descobri minha primeira paixão.\
+Ao mesmo tempo que me machucava, me trazia alivio.
+Juca: Até hoje me pergunto o que seria de  mim se as escolas \
+falassem sobre bullying, se os pais educassem os filhos \
+a não julgarem as diferenças.
+Juca: Se a sociedade falasse sobre automultillçao.\
+Bom, talvez eu não me encontrasse aqui.
+leave Juca
+[signal arg="encerramento"]

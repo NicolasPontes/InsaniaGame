@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://de1tlcwb01o5t"]
+
+[ext_resource type="Script" path="res://Scripts/creditos.gd" id="1_0pv7t"]
+[ext_resource type="Texture2D" uid="uid://c4kvugavov1mi" path="res://Assets/Cenarios/telaPretaogo.png" id="1_ag3mf"]
+[ext_resource type="FontFile" uid="uid://vsju2iahj2ny" path="res://Assets/Fonts/Marquen.ttf" id="2_amct1"]
+
+[node name="Créditos" type="Node2D"]
+scale = Vector2(0.650652, 0.650652)
+script = ExtResource("1_0pv7t")
+
+[node name="TelaPretaogo" type="Sprite2D" parent="."]
+position = Vector2(496, 276)
+scale = Vector2(0.511111, 0.511111)
+texture = ExtResource("1_ag3mf")
+
+[node name="Label" type="Label" parent="TelaPretaogo"]
+custom_minimum_size = Vector2(20, 0)
+offset_left = -153.0
+offset_top = -330.0
+offset_right = 133.0
+offset_bottom = -247.0
+theme_override_fonts/font = ExtResource("2_amct1")
+theme_override_font_sizes/font_size = 60
+text = "CRÉDITOS"
+
+[node name="Label2" type="Label" parent="TelaPretaogo"]
+custom_minimum_size = Vector2(20, 0)
+offset_left = -274.0
+offset_top = -196.0
+offset_right = 313.0
+offset_bottom = 116.0
+theme_override_fonts/font = ExtResource("2_amct1")
+theme_override_font_sizes/font_size = 30
+text = "Nicolas Pontes | Roteiro e Programação
+Roger Aurino | Programação
+Richard Ribeiro | Programação
+Lukas Akira | Design dos Personagens
+Matheus Oliveira | Design dos Cenários
+Ivan Enrique | Músicas e Efeitos Sonoros
+Giovanna Henrique | Website"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TelaPretaogo"]
+offset_left = -565.435
+offset_top = 338.478
+offset_right = 599.565
+offset_bottom = 438.478
+
+[node name="Menu" type="Button" parent="TelaPretaogo/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_amct1")
+theme_override_font_sizes/font_size = 60
+text = "Pressiona 'T' Para voltar pro Menu Inicial"
+flat = true

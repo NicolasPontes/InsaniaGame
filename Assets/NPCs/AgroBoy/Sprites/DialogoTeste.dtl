@@ -1,0 +1,7 @@
+[background fade="0.0"]
+[style name="EstiloInsania"]
+join PalhaçoDialogic left
+PalhaçoDialogic: Ola... Juca? Me chamo Bob, o Palhaco
+leave PalhaçoDialogic
+join Juca left
+Juca: Olá Bob

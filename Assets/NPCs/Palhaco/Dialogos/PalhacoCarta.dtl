@@ -1,0 +1,12 @@
+[style name="EstiloInsania"]
+join palhaco center
+palhaco: O que é isso? Um convite?
+leave palhaco
+join Juca center
+Juca: Sim... Para meu aniversário.
+leave Juca
+join palhaco center
+palhaco: O circo irá se apresentar no dia, mas irei assim que acabar!
+leave palhaco
+join Juca center
+Juca: Obrigado!

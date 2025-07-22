@@ -1,0 +1,12 @@
+[style name="EstiloInsania"]
+join nerd center
+nerd: Juca! Viu os aliens?
+leave nerd
+join Juca center
+Juca: Aliens?
+leave Juca
+join nerd center
+nerd: Sim Juca, eles invadiram o STF, e agora estão controlando o país.
+leave nerd
+join Juca center
+Juca: Não sabia disso.

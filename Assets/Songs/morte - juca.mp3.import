@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5f24a4xi4g0m"
+path="res://.godot/imported/morte - juca.mp3-920006f3835f749e1a01b3ee1ab4acb6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Songs/morte - juca.mp3"
+dest_files=["res://.godot/imported/morte - juca.mp3-920006f3835f749e1a01b3ee1ab4acb6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

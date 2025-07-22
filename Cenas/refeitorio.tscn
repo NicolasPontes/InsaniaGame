@@ -1,0 +1,270 @@
+[gd_scene load_steps=23 format=3 uid="uid://bo6bx1dhhpicy"]
+
+[ext_resource type="Script" path="res://Scripts/refeitorio.gd" id="1_c2ome"]
+[ext_resource type="Texture2D" uid="uid://bkri57av2t6ut" path="res://Assets/Cenarios/refeitorio .jpg" id="1_y3sl0"]
+[ext_resource type="PackedScene" uid="uid://by52luhmxa3am" path="res://Cenas/player.tscn" id="2_4khd0"]
+[ext_resource type="PackedScene" uid="uid://dpcceaagcauom" path="res://Assets/NPCs/Hippie/hippie.tscn" id="3_l80aq"]
+[ext_resource type="PackedScene" uid="uid://dyf05btxwg218" path="res://Assets/NPCs/Nerd/nerd.tscn" id="4_36j4c"]
+[ext_resource type="AudioStream" uid="uid://c1pfs4cupns12" path="res://Assets/Songs/escola.mp3" id="6_dk12e"]
+[ext_resource type="Texture2D" uid="uid://d1u61edbu3835" path="res://Assets/Cenarios/Cartas.png" id="7_li44l"]
+[ext_resource type="Texture2D" uid="uid://bqu0dvoh2y3hb" path="res://Assets/Luzes/254 Sem Titulo_20241112195540.jpg" id="8_eldis"]
+[ext_resource type="FontFile" uid="uid://vsju2iahj2ny" path="res://Assets/Fonts/Marquen.ttf" id="8_ntpbb"]
+[ext_resource type="PackedScene" uid="uid://c21pd2seinlr3" path="res://Assets/NPCs/PickMe/PickMe.tscn" id="10_2wbyo"]
+[ext_resource type="PackedScene" uid="uid://bjcass8lqq7ei" path="res://Cenas/hud.tscn" id="11_rca4e"]
+[ext_resource type="PackedScene" uid="uid://d3uf5u0oyyiw5" path="res://Cenas/pause_menu.tscn" id="12_pg4l2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_53547"]
+line_spacing = 10.0
+font = ExtResource("8_ntpbb")
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmp0o"]
+size = Vector2(689, 508)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv7ts"]
+size = Vector2(9833, 242)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5w5uj"]
+radius = 5400.15
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx6t1"]
+size = Vector2(102, 1099)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uif2v"]
+size = Vector2(149.5, 1085)
+
+[sub_resource type="Animation" id="Animation_vboqu"]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lvp1j"]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iekgm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vpm2k"]
+_data = {
+"FadeIn": SubResource("Animation_vboqu"),
+"FadeOut": SubResource("Animation_lvp1j"),
+"RESET": SubResource("Animation_iekgm")
+}
+
+[node name="Refeitório" type="Node2D"]
+scale = Vector2(0.331341, 0.331341)
+script = ExtResource("1_c2ome")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+top_level = true
+offset_left = 1620.0
+offset_top = 123.0
+offset_right = 1941.0
+offset_bottom = 219.0
+scale = Vector2(0.472317, 0.472317)
+size_flags_vertical = 0
+text = "clique e para
+ pegar as cartas"
+label_settings = SubResource("LabelSettings_53547")
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4923, 544)
+texture = ExtResource("1_y3sl0")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1907, 406)
+shape = SubResource("RectangleShape2D_mmp0o")
+
+[node name="Chao2" type="StaticBody2D" parent="."]
+position = Vector2(1194, 1076)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Chao2"]
+position = Vector2(375, -417)
+polygon = PackedVector2Array(-9, 2, 678, 5, 1165, 200, -518, 203)
+
+[node name="Chao" type="StaticBody2D" parent="."]
+position = Vector2(597, 538)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+position = Vector2(4322.5, 445)
+shape = SubResource("RectangleShape2D_tv7ts")
+
+[node name="Hippie" parent="." instance=ExtResource("3_l80aq")]
+position = Vector2(747, 610)
+
+[node name="Nerd" parent="." instance=ExtResource("4_36j4c")]
+position = Vector2(3682, 574)
+
+[node name="PickMe" parent="." instance=ExtResource("10_2wbyo")]
+position = Vector2(8714, 607)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dk12e")
+volume_db = -10.295
+autoplay = true
+parameters/looping = true
+
+[node name="carta" type="Sprite2D" parent="."]
+position = Vector2(5124, 554)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_li44l")
+
+[node name="Area2D" type="Area2D" parent="carta"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carta/Area2D"]
+shape = SubResource("CircleShape2D_5w5uj")
+
+[node name="Player" parent="." instance=ExtResource("2_4khd0")]
+position = Vector2(2363, 461)
+rotation = -0.00907308
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-15.072, 7.86353)
+limit_left = 0
+limit_top = 0
+limit_right = 3260
+limit_bottom = 359
+
+[node name="Luz" type="Sprite2D" parent="."]
+position = Vector2(95, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz"]
+position = Vector2(3738, -110.998)
+scale = Vector2(2.05382, 1.19618)
+energy = 0.2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.627451)
+texture = ExtResource("8_eldis")
+texture_scale = 3.0
+
+[node name="Luz2" type="Sprite2D" parent="."]
+position = Vector2(190, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz2"]
+position = Vector2(8667, 62)
+scale = Vector2(1.85156, 1.14323)
+energy = 0.25
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.627451)
+texture = ExtResource("8_eldis")
+texture_scale = 2.0
+
+[node name="Luz3" type="Sprite2D" parent="."]
+position = Vector2(570, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz3"]
+position = Vector2(6059, -62)
+scale = Vector2(2.64323, 1.29948)
+energy = 0.25
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.627451)
+texture = ExtResource("8_eldis")
+texture_scale = 2.0
+
+[node name="Luz4" type="Sprite2D" parent="."]
+position = Vector2(380, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz4"]
+position = Vector2(1114, -330)
+scale = Vector2(1.90278, 0.880491)
+energy = 0.3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.627451)
+texture = ExtResource("8_eldis")
+texture_scale = 3.0
+
+[node name="Luz5" type="Sprite2D" parent="."]
+position = Vector2(760, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz5"]
+position = Vector2(4362, 555)
+scale = Vector2(0.113932, 0.0988281)
+energy = 0.25
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.627451)
+texture = ExtResource("8_eldis")
+texture_scale = 2.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.882353, 0.831373, 0.647059, 1)
+
+[node name="limite1" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limite1"]
+position = Vector2(41, 539.5)
+shape = SubResource("RectangleShape2D_jx6t1")
+
+[node name="limite2" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limite2"]
+position = Vector2(9771.75, 545.5)
+shape = SubResource("RectangleShape2D_uif2v")
+
+[node name="transition" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+offset_right = 6396.0
+offset_bottom = 930.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
+libraries = {
+"": SubResource("AnimationLibrary_vpm2k")
+}
+
+[node name="HUD" parent="." instance=ExtResource("11_rca4e")]
+
+[node name="pause_menu" parent="." instance=ExtResource("12_pg4l2")]
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
+[connection signal="body_entered" from="carta/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="carta/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="animation_finished" from="transition/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

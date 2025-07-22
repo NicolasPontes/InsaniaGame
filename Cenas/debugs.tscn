@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://boamo25me7uak"]
+
+[ext_resource type="Script" path="res://Scripts/debugs.gd" id="1_43xju"]
+[ext_resource type="PackedScene" uid="uid://by52luhmxa3am" path="res://Cenas/player.tscn" id="1_nx265"]
+[ext_resource type="PackedScene" uid="uid://dl3mujkmmm8rn" path="res://Cenas/static_man.tscn" id="2_oai8x"]
+[ext_resource type="PackedScene" uid="uid://bjcass8lqq7ei" path="res://Cenas/hud.tscn" id="4_sn5v2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_of6hf"]
+size = Vector2(4293, 268)
+
+[node name="Debugs" type="Node2D"]
+position = Vector2(664, -53)
+script = ExtResource("1_43xju")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1481.5, 1039)
+shape = SubResource("RectangleShape2D_of6hf")
+
+[node name="StaticMan" parent="." instance=ExtResource("2_oai8x")]
+position = Vector2(1776, 640)
+
+[node name="Player" parent="." instance=ExtResource("1_nx265")]
+position = Vector2(365, 703)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.5, 0.5)
+
+[node name="HUD" parent="." instance=ExtResource("4_sn5v2")]

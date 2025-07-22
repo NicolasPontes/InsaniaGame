@@ -1,0 +1,9 @@
+[style name="EstiloInsania"]
+join Metaleiro center
+Metaleiro: Vai ter uma roda punk nessa festa?
+leave Metaleiro
+join Juca center
+Juca: No máximo uma roda de conversa.
+leave Juca
+join Metaleiro center
+Metaleiro: Compreendo.

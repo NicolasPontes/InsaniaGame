@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dab00isqrvklm"]
+
+[ext_resource type="Script" path="res://Scripts/inicio.gd" id="1_crowo"]
+
+[node name="Inicio" type="Node2D"]
+position = Vector2(3, 0)
+script = ExtResource("1_crowo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

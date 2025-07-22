@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cr4y383p1wdpm"]
+
+[ext_resource type="FontFile" uid="uid://vsju2iahj2ny" path="res://Assets/Fonts/Marquen.ttf" id="1_msqih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jj8s2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8ncr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ynvl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hg2wh"]
+
+[resource]
+Button/colors/font_focus_color = Color(0.878431, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.878431, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0.878431, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.658936, 0, 0, 1)
+Button/fonts/font = ExtResource("1_msqih")
+Button/styles/focus = SubResource("StyleBoxEmpty_jj8s2")
+Button/styles/hover = SubResource("StyleBoxEmpty_v8ncr")
+Button/styles/normal = SubResource("StyleBoxEmpty_7ynvl")
+Button/styles/pressed = SubResource("StyleBoxEmpty_hg2wh")

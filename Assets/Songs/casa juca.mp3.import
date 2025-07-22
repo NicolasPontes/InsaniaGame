@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mgn6rj2keexs"
+path="res://.godot/imported/casa juca.mp3-85a9b49d994e2711040b40e777167c86.mp3str"
+
+[deps]
+
+source_file="res://Assets/Songs/casa juca.mp3"
+dest_files=["res://.godot/imported/casa juca.mp3-85a9b49d994e2711040b40e777167c86.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

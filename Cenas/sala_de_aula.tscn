@@ -1,0 +1,221 @@
+[gd_scene load_steps=20 format=3 uid="uid://eu8nu7eym0ss"]
+
+[ext_resource type="Script" path="res://Cenas/sala_de_aula.gd" id="1_d7hs7"]
+[ext_resource type="Texture2D" uid="uid://dshvk83t7s5bd" path="res://Assets/Cenarios/fundo_salaDeaula.jpg" id="1_kopbw"]
+[ext_resource type="Texture2D" uid="uid://ddqvpqppgie3t" path="res://Assets/Cenarios/cadeiras_salaDeaula.png" id="2_2658f"]
+[ext_resource type="Texture2D" uid="uid://c50okyrvigwg1" path="res://Assets/Cenarios/cadeiraProfessor.png" id="3_r06r8"]
+[ext_resource type="PackedScene" uid="uid://by52luhmxa3am" path="res://Cenas/player.tscn" id="4_6f58f"]
+[ext_resource type="Texture2D" uid="uid://bqu0dvoh2y3hb" path="res://Assets/Luzes/254 Sem Titulo_20241112195540.jpg" id="6_d7e3d"]
+[ext_resource type="PackedScene" uid="uid://djqhtbrae6m34" path="res://Assets/NPCs/AgroBoy/AgroBoy.tscn" id="7_swdir"]
+[ext_resource type="PackedScene" uid="uid://db65wkoyypybm" path="res://Assets/NPCs/Mandrake/Mandrake.tscn" id="8_h8s1u"]
+[ext_resource type="PackedScene" uid="uid://bjcass8lqq7ei" path="res://Cenas/hud.tscn" id="10_vqqsj"]
+[ext_resource type="PackedScene" uid="uid://d3uf5u0oyyiw5" path="res://Cenas/pause_menu.tscn" id="11_nn82c"]
+[ext_resource type="AudioStream" uid="uid://c1pfs4cupns12" path="res://Assets/Songs/escola.mp3" id="11_x1jy2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y512"]
+size = Vector2(3018, 283.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5hqk"]
+size = Vector2(3045, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cwgy"]
+size = Vector2(25.875, 903.688)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuwcl"]
+size = Vector2(326, 652)
+
+[sub_resource type="Animation" id="Animation_vboqu"]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lvp1j"]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iekgm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vpm2k"]
+_data = {
+"FadeIn": SubResource("Animation_vboqu"),
+"FadeOut": SubResource("Animation_lvp1j"),
+"RESET": SubResource("Animation_iekgm")
+}
+
+[node name="Sala de aula" type="Node2D"]
+scale = Vector2(0.32945, 0.32945)
+script = ExtResource("1_d7hs7")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(1522, 549)
+texture = ExtResource("1_kopbw")
+
+[node name="Chao" type="StaticBody2D" parent="."]
+position = Vector2(597, 538)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+position = Vector2(933, 413.75)
+shape = SubResource("RectangleShape2D_8y512")
+
+[node name="teto" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teto"]
+position = Vector2(1512.5, 0)
+shape = SubResource("RectangleShape2D_q5hqk")
+
+[node name="Parede 2" type="StaticBody2D" parent="."]
+position = Vector2(2948, 226)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede 2"]
+position = Vector2(70, 214)
+shape = SubResource("RectangleShape2D_6cwgy")
+
+[node name="Parede 1" type="StaticBody2D" parent="."]
+position = Vector2(119, 232)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede 1"]
+position = Vector2(-109, 217)
+shape = SubResource("RectangleShape2D_6cwgy")
+
+[node name="Mandrake" parent="." instance=ExtResource("8_h8s1u")]
+position = Vector2(963, 575)
+scale = Vector2(0.838355, 0.838355)
+
+[node name="Player" parent="." instance=ExtResource("4_6f58f")]
+position = Vector2(198, 614)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-16, -16)
+zoom = Vector2(1.1, 1.1)
+limit_left = 5
+limit_top = 5
+limit_right = 1000
+limit_bottom = 359
+
+[node name="AgroBoy" parent="." instance=ExtResource("7_swdir")]
+position = Vector2(2226, 586)
+scale = Vector2(1.01203, 1.01203)
+
+[node name="Fundo2" type="Sprite2D" parent="."]
+position = Vector2(1433, 738.597)
+scale = Vector2(0.892788, 0.902564)
+texture = ExtResource("2_2658f")
+
+[node name="Fundo3" type="Sprite2D" parent="."]
+position = Vector2(2514, 591)
+texture = ExtResource("3_r06r8")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.930051, 0.89664, 0.774346, 1)
+
+[node name="Porta" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta"]
+position = Vector2(454, 437)
+shape = SubResource("RectangleShape2D_vuwcl")
+
+[node name="transition" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 6397.0
+offset_bottom = 931.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
+libraries = {
+"": SubResource("AnimationLibrary_vpm2k")
+}
+
+[node name="Luz2" type="Sprite2D" parent="."]
+position = Vector2(190, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz2"]
+position = Vector2(1214, 18)
+scale = Vector2(1, 1.01693)
+energy = 0.3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.627451)
+texture = ExtResource("6_d7e3d")
+texture_scale = 2.0
+
+[node name="Luz3" type="Sprite2D" parent="."]
+position = Vector2(190, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz3"]
+position = Vector2(2403, -102.001)
+scale = Vector2(0.830729, 1.01432)
+energy = 0.25
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.627451)
+texture = ExtResource("6_d7e3d")
+texture_scale = 2.0
+
+[node name="Luz4" type="Sprite2D" parent="."]
+position = Vector2(190, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz4"]
+position = Vector2(134.5, -12.5011)
+scale = Vector2(0.814453, 1.06576)
+energy = 0.25
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.627451)
+texture = ExtResource("6_d7e3d")
+texture_scale = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_x1jy2")
+volume_db = -10.0
+autoplay = true
+parameters/looping = false
+
+[node name="HUD" parent="." instance=ExtResource("10_vqqsj")]
+
+[node name="pause_menu" parent="." instance=ExtResource("11_nn82c")]
+
+[connection signal="body_entered" from="Porta" to="." method="_on_porta_body_entered"]
+[connection signal="body_exited" from="Porta" to="." method="_on_porta_body_exited"]
+[connection signal="animation_finished" from="transition/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

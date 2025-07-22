@@ -1,0 +1,365 @@
+[gd_scene load_steps=23 format=3 uid="uid://5hnd4nkkqf8t"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_cji7t"]
+[ext_resource type="Texture2D" uid="uid://c2deuj1qevtdu" path="res://Assets/Cenarios/LogoInsaniaBranco.png" id="2_5yhol"]
+[ext_resource type="Texture2D" uid="uid://bbo1mg70i6mpx" path="res://Assets/Cenarios/PlanoFundo1.jpg" id="2_w6xo4"]
+[ext_resource type="FontFile" uid="uid://cytyqfvkrsb0k" path="res://Assets/Fonts/Whatdo.ttf" id="4_0ussi"]
+[ext_resource type="Texture2D" uid="uid://cxqgvn8o1xxkl" path="res://Assets/Cenarios/TVsprite.png" id="5_pa16l"]
+[ext_resource type="AudioStream" uid="uid://dpn7wl34q8sst" path="res://Assets/Songs/tema-inicial.mp3" id="5_t3t0n"]
+[ext_resource type="Texture2D" uid="uid://c4kvugavov1mi" path="res://Assets/Cenarios/telaPretaogo.png" id="6_50rm3"]
+[ext_resource type="Texture2D" uid="uid://juu6mmqdrn8k" path="res://Assets/Cenarios/Logo_Rednic.png" id="7_2r1vt"]
+[ext_resource type="Texture2D" uid="uid://4appkpkwjnxb" path="res://Assets/Cenarios/PlanoFundo2.jpg" id="9_t1uw8"]
+[ext_resource type="Texture2D" uid="uid://cnsms1ga7jboj" path="res://Assets/Cenarios/PlanoFundo3.jpg" id="10_rvirr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8uh6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kwqi"]
+atlas = ExtResource("5_pa16l")
+region = Rect2(251, 339, 1036, 777)
+
+[sub_resource type="Animation" id="Animation_ah37n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hud/ContainerMenu/HBoxContainer/VBoxContainer2/Tv:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(251, 339, 1036, 777)]
+}
+
+[sub_resource type="Animation" id="Animation_mjiog"]
+resource_name = "estatica"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hud/ContainerMenu/HBoxContainer/VBoxContainer2/Tv:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(251, 339, 1036, 777), Rect2(1787, 339, 1034, 776), Rect2(251, 1871, 1037, 778)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m17t7"]
+_data = {
+"RESET": SubResource("Animation_ah37n"),
+"estatica": SubResource("Animation_mjiog")
+}
+
+[sub_resource type="Animation" id="Animation_3im0w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hud/CenterContainer/Logo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_2r1vt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hud/CenterContainer/Logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hud/TelaPreta:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_50rm3")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hud/TelaPreta:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r8cbo"]
+resource_name = "inicio"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hud/CenterContainer/Logo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_2r1vt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hud/CenterContainer/Logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.6, 4.93333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kejek"]
+resource_name = "iniciopreto"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hud/TelaPreta:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_50rm3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hud/TelaPreta:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6cl7c"]
+_data = {
+"RESET": SubResource("Animation_3im0w"),
+"inicio": SubResource("Animation_r8cbo"),
+"iniciopreto": SubResource("Animation_kejek")
+}
+
+[sub_resource type="Animation" id="Animation_jbhj7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hud/bg:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_w6xo4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hud/bg:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_47f8x"]
+resource_name = "bg"
+length = 0.55
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hud/bg:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_w6xo4"), ExtResource("9_t1uw8"), ExtResource("10_rvirr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hud/bg:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u21e5"]
+_data = {
+"RESET": SubResource("Animation_jbhj7"),
+"bg": SubResource("Animation_47f8x")
+}
+
+[node name="Menu" type="Node2D"]
+position = Vector2(2, 0)
+script = ExtResource("1_cji7t")
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="bg" type="TextureRect" parent="hud"]
+custom_minimum_size = Vector2(640, 360)
+offset_top = -140.0
+offset_right = 640.0
+offset_bottom = 500.0
+texture = ExtResource("2_w6xo4")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ContainerMenu" type="MarginContainer" parent="hud"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00855, 1.00855)
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="hud/ContainerMenu"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="hud/ContainerMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="logo2" type="TextureRect" parent="hud/ContainerMenu/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+texture = ExtResource("2_5yhol")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Iniciar" type="Button" parent="hud/ContainerMenu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.878431, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.877346, 3.87453e-06, 1.2514e-06, 1)
+theme_override_colors/font_pressed_color = Color(0.878431, 0, 0, 1)
+theme_override_colors/font_color = Color(0.847059, 0.74902, 0.847059, 1)
+theme_override_fonts/font = ExtResource("4_0ussi")
+theme_override_font_sizes/font_size = 30
+text = "Iniciar"
+flat = true
+
+[node name="Sair" type="Button" parent="hud/ContainerMenu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.878431, 0, 0, 1)
+theme_override_colors/font_color = Color(0.847059, 0.74902, 0.847059, 1)
+theme_override_fonts/font = ExtResource("4_0ussi")
+theme_override_font_sizes/font_size = 30
+text = "Sair
+"
+flat = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="hud/ContainerMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="hud/ContainerMenu/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 70
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8uh6q")
+
+[node name="Tv" type="TextureRect" parent="hud/ContainerMenu/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(270, 270)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_1kwqi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TelaPreta" type="ColorRect" parent="hud"]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -10.0
+offset_right = 12.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="hud"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Logo" type="TextureRect" parent="hud/CenterContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+texture = ExtResource("7_2r1vt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TrilhaSonora" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_t3t0n")
+autoplay = true
+
+[node name="AnimationTv" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m17t7")
+}
+
+[node name="AnimationRednic" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6cl7c")
+}
+
+[node name="AnimationBg" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u21e5")
+}
+
+[connection signal="pressed" from="hud/ContainerMenu/HBoxContainer/VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="hud/ContainerMenu/HBoxContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
+[connection signal="animation_finished" from="AnimationRednic" to="." method="_on_animation_rednic_animation_finished"]

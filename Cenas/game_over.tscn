@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://mnjuhnw8ry8r"]
+
+[ext_resource type="Script" path="res://Cenas/game_over.gd" id="1_4anwd"]
+[ext_resource type="Texture2D" uid="uid://bqu0dvoh2y3hb" path="res://Assets/Luzes/254 Sem Titulo_20241112195540.jpg" id="1_w35u7"]
+[ext_resource type="Texture2D" uid="uid://bvo1ug8wakadu" path="res://Assets/JucaSprites/JucaDialogo.png" id="2_y84bp"]
+[ext_resource type="FontFile" uid="uid://vsju2iahj2ny" path="res://Assets/Fonts/Marquen.ttf" id="3_888tt"]
+[ext_resource type="AudioStream" uid="uid://c5f24a4xi4g0m" path="res://Assets/Songs/morte - juca.mp3" id="5_md1je"]
+
+[node name="GameOver" type="Node2D"]
+scale = Vector2(0.556679, 0.556679)
+script = ExtResource("1_4anwd")
+
+[node name="luz" type="Sprite2D" parent="."]
+position = Vector2(581, 308)
+
+[node name="PointLight2D" type="PointLight2D" parent="luz"]
+position = Vector2(-19, 25)
+energy = 1.1
+texture = ExtResource("1_w35u7")
+texture_scale = 1.1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)
+
+[node name="Juca" type="Sprite2D" parent="."]
+position = Vector2(569, 314.55)
+scale = Vector2(0.4, 0.39074)
+texture = ExtResource("2_y84bp")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0687983, 0.0687983, 0.0687983, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 257.0
+offset_top = 29.0
+offset_right = 898.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_888tt")
+theme_override_font_sizes/font_size = 120
+text = "Fim de Jogo"
+
+[node name="HBoxContainer" type="GridContainer" parent="."]
+offset_left = 454.481
+offset_top = 429.332
+offset_right = 826.481
+offset_bottom = 633.332
+
+[node name="Reiniciar" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.878431, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.878431, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.878431, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.685757, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_888tt")
+theme_override_font_sizes/font_size = 60
+text = "Reiniciar"
+flat = true
+
+[node name="Sair" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.878431, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.878431, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.878431, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.686275, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_888tt")
+theme_override_font_sizes/font_size = 60
+text = "Sair"
+flat = true
+
+[node name="Morte" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_md1je")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="HBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="HBoxContainer/Sair" to="." method="_on_sair_pressed"]

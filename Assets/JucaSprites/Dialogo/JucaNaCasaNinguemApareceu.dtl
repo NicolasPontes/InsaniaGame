@@ -1,0 +1,16 @@
+[style name="EstiloInsania"]
+join Juca center
+Juca: Ninguém apareceu... Eu deveria imaginar mesmo, quem iria querer participar de uma festa de aniversário de alguem como eu?
+Juca:  Um fracassado, triste e solitário.
+Juca: Não me sinto bem, é como se a minha pele estivesse rígida  e minha respiração pesada.
+Juca: Ninguém mesmo irá aparecer? Eu jurava que o palhaço falava sério falando que vinha...
+leave Juca
+join Tv center
+Tv: Noticias quentes\: é isso mesmo pessoal,\
+o circo P E G O U    F O G O
+[signal arg="Piscar"]
+Tv: Vamos para os comerciais!
+leave Tv
+join Juca center
+Juca: Não é possivel, o que é isso? Que sentimento é esse? Parece que eu estou morrendo.
+Juca: E   quem    é    você???

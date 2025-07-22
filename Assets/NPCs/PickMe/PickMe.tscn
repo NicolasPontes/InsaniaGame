@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c21pd2seinlr3"]
+
+[ext_resource type="Script" path="res://Assets/NPCs/PickMe/pick_me.gd" id="1_7ny3q"]
+[ext_resource type="Texture2D" uid="uid://bgvludiyp6ot" path="res://Assets/NPCs/PickMe/Sprites/Pick Me.png" id="2_xgeg7"]
+[ext_resource type="FontFile" uid="uid://vsju2iahj2ny" path="res://Assets/Fonts/Marquen.ttf" id="3_tknhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_modb6"]
+size = Vector2(689, 508)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tjkkr"]
+line_spacing = 10.0
+font = ExtResource("3_tknhx")
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+
+[node name="PickMe" type="Node2D"]
+position = Vector2(154, 264)
+script = ExtResource("1_7ny3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_xgeg7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -14)
+shape = SubResource("RectangleShape2D_modb6")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -136.0
+offset_top = -297.0
+offset_right = 185.0
+offset_bottom = -254.0
+size_flags_vertical = 0
+text = "Clique E para interagir"
+label_settings = SubResource("LabelSettings_tjkkr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

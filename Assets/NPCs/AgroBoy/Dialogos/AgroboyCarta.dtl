@@ -1,0 +1,9 @@
+[style name="EstiloInsania"]
+join AgroBoy center
+AgroBoy: Uai sô, está marcado para as 19\:00?
+leave AgroBoy
+join Juca center
+Juca: Isso mesmo.
+leave Juca
+join AgroBoy center
+AgroBoy: Essas horas eu estou dormindo com as galinhas já.

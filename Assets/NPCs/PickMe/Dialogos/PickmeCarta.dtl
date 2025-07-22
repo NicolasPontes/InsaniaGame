@@ -1,0 +1,6 @@
+[style name="EstiloInsania"]
+join PickMe center
+PickMe: Que... fofo? Vou ver se consigo aparecer.
+leave PickMe
+join Juca center
+Juca: Obrigado.
